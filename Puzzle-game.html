@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img id="row1" src="image/a1.jpg" height="100px" width="500" onclick="changeImage()"><br>
+<img id="row2" src="image/a2.jpg" height="100px" width="500" onclick="changeImage2()"><br>
+<img id="row3" src="image/a3.jpg" height="100px" width="500" onclick="changeImage3()"><br>
+<img id="row4" src="image/a4.jpg" height="100px" width="500" onclick="changeImage4()"><br>
+
+</body>
+</html>
+
+<script>
+    let count1 = 0;
+    let count2 = 1;
+    let count3 = 2;
+    let count4 = 3;
+    let image1 = document.getElementById('row1');
+    let image2 = document.getElementById('row2');
+    let image3 = document.getElementById('row3');
+    let image4 = document.getElementById('row4');
+
+    function changeImage(){
+        count1++;
+        if (count1 == 1) {
+            image1.src = 'image/a1.jpg'
+
+        } else if (count1 == 2) {
+            image1.src = 'image/b1.jpg'
+        }
+        else if (count1==3) {
+            image1.src = 'image/c1.jpg'
+            count1 = 0;
+
+        }
+        checkShadow()
+    }
+
+    function changeImage2(){
+        count2++;
+        if (count2 ==1) {
+            image2.src = 'image/a2.jpg'
+        }else if (count2 ==2){
+            image2.src = 'image/b2.jpg'
+        }else {count2 = 0;
+            image2.src = 'image/c2.jpg'
+        }
+        checkShadow()
+    }
+
+    function changeImage3(){
+        count3++;
+        if (count3 ==1) {
+            image3.src = 'image/a3.jpg'
+        }else if (count3 ==2){
+            image3.src = 'image/b3.jpg'
+        }else { count3 =0;
+            image3.src= 'image/c3.jpg'
+        }
+        checkShadow()
+    }
+
+    function changeImage4() {
+        count4++;
+        if (count4 ==1) {
+            image4.src = 'image/a4.jpg'
+        }else if (count4 ==2) {
+            image4.src = 'image/b4.jpg'
+        }else {count4 = 0;
+            image4.src = 'image/c4.jpg'
+        }
+        checkShadow()
+    }
+
+    function checkShadow(){
+        if (count1 == count2 && count2 == count3 && count3 == count4) {
+            image1.style.boxShadow = '#f1ebf3 4px 4px 9px';
+            image2.style.boxShadow = '#f1ebf3 4px 4px 9px';
+            image3.style.boxShadow = '#f1ebf3 4px 4px 9px';
+            image4.style.boxShadow = '#f1ebf3 4px 4px 9px';
+        } else {
+            image1.style.boxShadow = 'grey 4px 4px 9px';
+            image2.style.boxShadow = 'grey 4px 4px 9px';
+            image3.style.boxShadow = 'grey 4px 4px 9px';
+            image4.style.boxShadow = 'grey 4px 4px 9px';
+        }
+    }
+
+</script>
